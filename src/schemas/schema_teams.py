@@ -8,7 +8,6 @@ class TeamCreate(BaseModel):
     avg_age: int | None = None
 
 
-
 class TeamResponse(TeamCreate):
     id: int
 
