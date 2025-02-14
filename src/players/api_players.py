@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
-from src import models, schemas
+from src.players import models, schemas
 
 
 def create_player(db: Session, player: schemas.PlayerCreate):
-    db_player = models.Player(**player.dict())
+    db_player = models.Player(**player.model_dump())
     db.add(db_player)
     db.commit()
     db.refresh(db_player)

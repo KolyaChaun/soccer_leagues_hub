@@ -1,12 +1,14 @@
+from datetime import date
+
 from pydantic import BaseModel
-from typing import Optional
 
 
 class PlayerCreate(BaseModel):
     name: str
     surname: str
-    age: int
-    club: Optional[str] = None
+    photo_url: str | None = None
+    date_of_birth: date
+    team_id: int
 
 
 class PlayerResponse(PlayerCreate):
